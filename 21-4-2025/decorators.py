@@ -62,24 +62,24 @@
 
 
 
-if True:
-    print("hi")
+# if True:
+#     print("hi")
 
 
 
 
-def dec(g):
-    def wrapper():
-        print("Chaitanya")
-        print(g())
-        print("Kumar")
-    return wrapper
+# def dec(g):
+#     def wrapper():
+#         print("Chaitanya")
+#         print(g())
+#         print("Kumar")
+#     return wrapper
 
-def g():
-    return "hi"
+# def g():
+#     return "hi"
 
-g = dec(g)
-g()
+# g = dec(g)
+# g()
 
 
 
@@ -141,3 +141,36 @@ g()
 # fun calling / invocation ->calling a function 
 
 
+# closure -> function inside a function -> inner function -> outer function -> return value of outer function -> inner function object -> closure object -> closure variable -> free variable -> non local variable
+# A closure is a function object that has access to variables in its lexical scope even when the function is called outside that scope
+
+
+
+def two():
+    print("hi i am outer")
+
+def one():    
+    print("hi i am inner")
+
+def three():
+    print("hi i am inner 2")
+
+# Decorator factory that accepts three functions
+def decorator(one, two, three):
+    # Actual decorator that receives the function to be wrapped (four)
+    def actual_decorator(func):
+        def wrapper():
+            print("hi i am starting fun")
+            one()
+            two()
+            three()
+            func()  # Call the decorated function
+            print("hi i am ending fun")
+        return wrapper
+    return actual_decorator
+
+@decorator(one, two, three)
+def four():
+    print("hi i am inner 3")
+
+four()
