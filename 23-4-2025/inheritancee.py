@@ -80,9 +80,7 @@
 
 # print(r15.start())
 # print(r15.color)
-# print(r15.model)
-
-
+# print(r15.mo
 
 
 # class person:
@@ -137,3 +135,6 @@ print(my_car.brand)  # Output: Toyota
 print(my_car.model)  # Output: Corolla
 print(my_car.start())  # Output: Vehicle is starting...
 print(my_car.drive())  # Output: Car is driving...
+
+
+
